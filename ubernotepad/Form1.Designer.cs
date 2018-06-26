@@ -75,7 +75,7 @@
             // 
             // browseButton
             // 
-            this.browseButton.Location = new System.Drawing.Point(536, 150);
+            this.browseButton.Location = new System.Drawing.Point(181, 66);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(75, 23);
             this.browseButton.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.radioPanel.Controls.Add(this.radioDefault);
             this.radioPanel.Controls.Add(this.radioMagnolia);
             this.radioPanel.Controls.Add(this.radioBlue);
-            this.radioPanel.Location = new System.Drawing.Point(617, 107);
+            this.radioPanel.Location = new System.Drawing.Point(547, 107);
             this.radioPanel.Name = "radioPanel";
             this.radioPanel.Size = new System.Drawing.Size(120, 119);
             this.radioPanel.TabIndex = 3;
