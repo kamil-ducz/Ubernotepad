@@ -51,9 +51,6 @@
             this.decreaseFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customSaveButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.openButton = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.mainTextBox = new System.Windows.Forms.TextBox();
             this.filePath = new System.Windows.Forms.TextBox();
@@ -63,6 +60,12 @@
             this.productsTableAdapter = new ubernotepad.NorthwindDataSetTableAdapters.ProductsTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.showRecord2 = new System.Windows.Forms.Button();
+            this.newButton = new System.Windows.Forms.Button();
+            this.customSaveButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.openButton = new System.Windows.Forms.Button();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dbLabel = new System.Windows.Forms.Label();
             this.radioPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
@@ -72,7 +75,7 @@
             // 
             // browseButton
             // 
-            this.browseButton.Location = new System.Drawing.Point(609, 313);
+            this.browseButton.Location = new System.Drawing.Point(536, 150);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(75, 23);
             this.browseButton.TabIndex = 2;
@@ -85,7 +88,7 @@
             this.radioPanel.Controls.Add(this.radioDefault);
             this.radioPanel.Controls.Add(this.radioMagnolia);
             this.radioPanel.Controls.Add(this.radioBlue);
-            this.radioPanel.Location = new System.Drawing.Point(591, 168);
+            this.radioPanel.Location = new System.Drawing.Point(617, 107);
             this.radioPanel.Name = "radioPanel";
             this.radioPanel.Size = new System.Drawing.Size(120, 119);
             this.radioPanel.TabIndex = 3;
@@ -154,13 +157,14 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1016, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem});
@@ -171,21 +175,21 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -255,43 +259,13 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // customSaveButton
-            // 
-            this.customSaveButton.Image = global::ubernotepad.Properties.Resources.save_as_template_256;
-            this.customSaveButton.Location = new System.Drawing.Point(302, 62);
-            this.customSaveButton.Name = "customSaveButton";
-            this.customSaveButton.Size = new System.Drawing.Size(36, 36);
-            this.customSaveButton.TabIndex = 12;
-            this.customSaveButton.UseVisualStyleBackColor = true;
-            this.customSaveButton.Click += new System.EventHandler(this.customSaveButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.Image = global::ubernotepad.Properties.Resources.save;
-            this.saveButton.Location = new System.Drawing.Point(183, 63);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(36, 36);
-            this.saveButton.TabIndex = 11;
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // openButton
-            // 
-            this.openButton.Image = global::ubernotepad.Properties.Resources.open_file_icon;
-            this.openButton.Location = new System.Drawing.Point(56, 63);
-            this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(36, 36);
-            this.openButton.TabIndex = 10;
-            this.openButton.UseVisualStyleBackColor = true;
-            this.openButton.Click += new System.EventHandler(this.openButton_Click);
-            // 
             // mainTextBox
             // 
-            this.mainTextBox.Location = new System.Drawing.Point(41, 168);
+            this.mainTextBox.Location = new System.Drawing.Point(13, 107);
             this.mainTextBox.MaximumSize = new System.Drawing.Size(600, 600);
             this.mainTextBox.Multiline = true;
             this.mainTextBox.Name = "mainTextBox";
@@ -313,7 +287,7 @@
             // 
             // showRecord
             // 
-            this.showRecord.Location = new System.Drawing.Point(591, 412);
+            this.showRecord.Location = new System.Drawing.Point(875, 536);
             this.showRecord.Name = "showRecord";
             this.showRecord.Size = new System.Drawing.Size(129, 40);
             this.showRecord.TabIndex = 17;
@@ -333,14 +307,15 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 313);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 322);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(1024, 758);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(517, 393);
+            this.dataGridView1.Size = new System.Drawing.Size(828, 500);
             this.dataGridView1.TabIndex = 18;
             // 
             // showRecord2
             // 
-            this.showRecord2.Location = new System.Drawing.Point(591, 501);
+            this.showRecord2.Location = new System.Drawing.Point(875, 412);
             this.showRecord2.Name = "showRecord2";
             this.showRecord2.Size = new System.Drawing.Size(129, 51);
             this.showRecord2.TabIndex = 19;
@@ -348,12 +323,73 @@
             this.showRecord2.UseVisualStyleBackColor = true;
             this.showRecord2.Click += new System.EventHandler(this.showRecord2_Click);
             // 
+            // newButton
+            // 
+            this.newButton.Image = global::ubernotepad.Properties.Resources._new;
+            this.newButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.newButton.Location = new System.Drawing.Point(13, 54);
+            this.newButton.Name = "newButton";
+            this.newButton.Size = new System.Drawing.Size(36, 36);
+            this.newButton.TabIndex = 20;
+            this.newButton.UseVisualStyleBackColor = true;
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            // 
+            // customSaveButton
+            // 
+            this.customSaveButton.Image = global::ubernotepad.Properties.Resources.save_as_template_256;
+            this.customSaveButton.Location = new System.Drawing.Point(139, 54);
+            this.customSaveButton.Name = "customSaveButton";
+            this.customSaveButton.Size = new System.Drawing.Size(36, 36);
+            this.customSaveButton.TabIndex = 12;
+            this.customSaveButton.UseVisualStyleBackColor = true;
+            this.customSaveButton.Click += new System.EventHandler(this.customSaveButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Image = global::ubernotepad.Properties.Resources.save;
+            this.saveButton.Location = new System.Drawing.Point(97, 54);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(36, 36);
+            this.saveButton.TabIndex = 11;
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // openButton
+            // 
+            this.openButton.Image = global::ubernotepad.Properties.Resources.open_file_icon;
+            this.openButton.Location = new System.Drawing.Point(55, 54);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(36, 36);
+            this.openButton.TabIndex = 10;
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // dbLabel
+            // 
+            this.dbLabel.AutoSize = true;
+            this.dbLabel.Font = new System.Drawing.Font("Webdings", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.dbLabel.Location = new System.Drawing.Point(175, 274);
+            this.dbLabel.Name = "dbLabel";
+            this.dbLabel.Size = new System.Drawing.Size(492, 30);
+            this.dbLabel.TabIndex = 21;
+            this.dbLabel.Text = "Northind Database";
+            this.dbLabel.Click += new System.EventHandler(this.dbLabel_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(800, 771);
+            this.ClientSize = new System.Drawing.Size(1016, 741);
+            this.Controls.Add(this.dbLabel);
+            this.Controls.Add(this.newButton);
             this.Controls.Add(this.showRecord2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.showRecord);
@@ -369,6 +405,7 @@
             this.Controls.Add(this.browseButton);
             this.Name = "MainForm";
             this.Text = "mainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.radioPanel.ResumeLayout(false);
             this.radioPanel.PerformLayout();
@@ -417,6 +454,9 @@
         private NorthwindDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button showRecord2;
+        private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.Label dbLabel;
     }
 }
 
