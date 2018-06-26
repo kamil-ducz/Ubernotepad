@@ -186,7 +186,8 @@ namespace ubernotepad
             float currentSize;
 
             currentSize = mainTextBox.Font.Size;
-            currentSize += 4.0F;
+            if (currentSize < 64) currentSize += 4.0F;
+            else MessageBox.Show("Don't push");
             mainTextBox.Font = new Font(mainTextBox.Font.Name, currentSize,
             mainTextBox.Font.Style, mainTextBox.Font.Unit);
         }
@@ -196,7 +197,8 @@ namespace ubernotepad
             float currentSize;
 
             currentSize = mainTextBox.Font.Size;
-            currentSize -= 4.0F;
+            if (currentSize > 4) currentSize -= 4.0F;
+            else MessageBox.Show("Don't push");
             mainTextBox.Font = new Font(mainTextBox.Font.Name, currentSize,
             mainTextBox.Font.Style, mainTextBox.Font.Unit);
         }
