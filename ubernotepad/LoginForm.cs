@@ -24,6 +24,7 @@ namespace ubernotepad
                 MessageBox.Show("Welcome!");
                 MainForm showMainForm = new MainForm();
                 showMainForm.Show();
+                this.Visible = false;
             }                
             else MessageBox.Show("Incorrect login or password. Try again.");
         }
@@ -31,6 +32,11 @@ namespace ubernotepad
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

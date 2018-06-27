@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.browseButton = new System.Windows.Forms.Button();
             this.radioPanel = new System.Windows.Forms.Panel();
             this.radioDefault = new System.Windows.Forms.RadioButton();
             this.radioMagnolia = new System.Windows.Forms.RadioButton();
@@ -66,6 +65,11 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.openButton = new System.Windows.Forms.Button();
             this.dbLabel = new System.Windows.Forms.Label();
+            this.recipientTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sendEmailButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.restartButton = new System.Windows.Forms.Button();
             this.radioPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
@@ -73,22 +77,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // browseButton
-            // 
-            this.browseButton.Location = new System.Drawing.Point(181, 66);
-            this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(75, 23);
-            this.browseButton.TabIndex = 2;
-            this.browseButton.Text = "Browse file...";
-            this.browseButton.UseVisualStyleBackColor = true;
-            this.browseButton.Click += new System.EventHandler(this.button1_Click);
-            // 
             // radioPanel
             // 
             this.radioPanel.Controls.Add(this.radioDefault);
             this.radioPanel.Controls.Add(this.radioMagnolia);
             this.radioPanel.Controls.Add(this.radioBlue);
-            this.radioPanel.Location = new System.Drawing.Point(547, 107);
+            this.radioPanel.Location = new System.Drawing.Point(748, 28);
             this.radioPanel.Name = "radioPanel";
             this.radioPanel.Size = new System.Drawing.Size(120, 119);
             this.radioPanel.TabIndex = 3;
@@ -273,11 +267,11 @@
             // mainTextBox
             // 
             this.mainTextBox.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.mainTextBox.Location = new System.Drawing.Point(13, 107);
+            this.mainTextBox.Location = new System.Drawing.Point(24, 139);
             this.mainTextBox.MaximumSize = new System.Drawing.Size(600, 600);
             this.mainTextBox.Multiline = true;
             this.mainTextBox.Name = "mainTextBox";
-            this.mainTextBox.Size = new System.Drawing.Size(517, 119);
+            this.mainTextBox.Size = new System.Drawing.Size(517, 239);
             this.mainTextBox.TabIndex = 13;
             // 
             // filePath
@@ -295,7 +289,7 @@
             // 
             // showRecord
             // 
-            this.showRecord.Location = new System.Drawing.Point(875, 536);
+            this.showRecord.Location = new System.Drawing.Point(847, 632);
             this.showRecord.Name = "showRecord";
             this.showRecord.Size = new System.Drawing.Size(129, 40);
             this.showRecord.TabIndex = 17;
@@ -315,15 +309,15 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 322);
+            this.dataGridView1.Location = new System.Drawing.Point(55, 478);
             this.dataGridView1.MaximumSize = new System.Drawing.Size(1024, 758);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(828, 500);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 344);
             this.dataGridView1.TabIndex = 18;
             // 
             // showRecord2
             // 
-            this.showRecord2.Location = new System.Drawing.Point(875, 412);
+            this.showRecord2.Location = new System.Drawing.Point(847, 534);
             this.showRecord2.Name = "showRecord2";
             this.showRecord2.Size = new System.Drawing.Size(129, 51);
             this.showRecord2.TabIndex = 19;
@@ -376,12 +370,58 @@
             // 
             this.dbLabel.AutoSize = true;
             this.dbLabel.Font = new System.Drawing.Font("Webdings", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.dbLabel.Location = new System.Drawing.Point(175, 274);
+            this.dbLabel.Location = new System.Drawing.Point(214, 418);
             this.dbLabel.Name = "dbLabel";
             this.dbLabel.Size = new System.Drawing.Size(492, 30);
             this.dbLabel.TabIndex = 21;
             this.dbLabel.Text = "Northind Database";
             this.dbLabel.Click += new System.EventHandler(this.dbLabel_Click);
+            // 
+            // recipientTextBox
+            // 
+            this.recipientTextBox.Location = new System.Drawing.Point(547, 224);
+            this.recipientTextBox.Name = "recipientTextBox";
+            this.recipientTextBox.Size = new System.Drawing.Size(243, 20);
+            this.recipientTextBox.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(192, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 22);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "WORKFIELD";
+            // 
+            // sendEmailButton
+            // 
+            this.sendEmailButton.Location = new System.Drawing.Point(619, 250);
+            this.sendEmailButton.Name = "sendEmailButton";
+            this.sendEmailButton.Size = new System.Drawing.Size(75, 23);
+            this.sendEmailButton.TabIndex = 24;
+            this.sendEmailButton.Text = "Send";
+            this.sendEmailButton.UseVisualStyleBackColor = true;
+            this.sendEmailButton.Click += new System.EventHandler(this.sendEmailButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(616, 208);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Email Address";
+            // 
+            // restartButton
+            // 
+            this.restartButton.Location = new System.Drawing.Point(901, 28);
+            this.restartButton.Name = "restartButton";
+            this.restartButton.Size = new System.Drawing.Size(75, 23);
+            this.restartButton.TabIndex = 26;
+            this.restartButton.Text = "Logout";
+            this.restartButton.UseVisualStyleBackColor = true;
+            this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
             // 
             // MainForm
             // 
@@ -389,6 +429,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1016, 741);
+            this.Controls.Add(this.restartButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.sendEmailButton);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.recipientTextBox);
             this.Controls.Add(this.dbLabel);
             this.Controls.Add(this.newButton);
             this.Controls.Add(this.showRecord2);
@@ -403,7 +448,6 @@
             this.Controls.Add(this.saveAsButton);
             this.Controls.Add(this.openFileButton);
             this.Controls.Add(this.radioPanel);
-            this.Controls.Add(this.browseButton);
             this.Name = "MainForm";
             this.Text = "mainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -421,7 +465,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.Panel radioPanel;
         private System.Windows.Forms.RadioButton radioMagnolia;
         private System.Windows.Forms.RadioButton radioBlue;
@@ -458,6 +501,11 @@
         private System.Windows.Forms.Button newButton;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.Label dbLabel;
+        private System.Windows.Forms.TextBox recipientTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button sendEmailButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button restartButton;
     }
 }
 

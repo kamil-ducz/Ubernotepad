@@ -9,18 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+using S22.Imap;
 
 namespace ubernotepad
 {
     public partial class MainForm : Form
     {
+        static MainForm f;
+
         SqlDataAdapter sda;
         DataTable dt;
         SqlConnection con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=Northwind;Integrated Security=True");
-
+        
         public MainForm()
         {
             InitializeComponent();
+            f = this;
         }
 
         private async void openFileAction(object sender, EventArgs e)
@@ -227,6 +233,46 @@ namespace ubernotepad
         private void dbLabel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Northwind Database");
+        }
+
+        private void sendEmailButton_Click(object sender, EventArgs e)
+        {
+            bool IsValidEmail(string email)
+            {
+                try
+                {
+                    var addr = new System.Net.Mail.MailAddress(recipientTextBox.Text);
+                    return addr.Address == email;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+            if (IsValidEmail(recipientTextBox.Text))
+            {
+                string txtFrom = "ubernotepad.mailer@gmail.com";
+                string txtRecipient = recipientTextBox.Text;
+                var message = new MailMessage(txtFrom, txtRecipient);
+                message.Subject = "High Time";
+                message.Body = mainTextBox.Text;
+
+                using (SmtpClient mailer = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    mailer.Credentials = new NetworkCredential("ubernotepad.mailer@gmail.com", "Test123!@#");
+                    mailer.EnableSsl = true;
+                    mailer.Send(message);
+                    MessageBox.Show("Check your email box :)");
+                }
+            }
+            else
+                MessageBox.Show("Invalid email.");
+        }
+
+        private void restartButton_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
