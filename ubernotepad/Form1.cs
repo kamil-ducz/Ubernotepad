@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using S22.Imap;
-
+//
 namespace ubernotepad
 {
     public partial class MainForm : Form
