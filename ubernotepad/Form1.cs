@@ -21,7 +21,7 @@ namespace ubernotepad
 
         SqlDataAdapter sda;
         DataTable dt;
-        SqlConnection con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=Northwind;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=mssql6.gear.host;Initial Catalog=northwind69;User ID=northwind69;Password=Ri8Fl?nIA!3h");
         
         public MainForm()
         {
